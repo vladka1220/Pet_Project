@@ -1,0 +1,59 @@
+:root {
+    --focus-color: #b5b5b5; /* Основной цвет */
+}
+
+/* Стили для формы */
+.login-container {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+/* Стили для кнопки */
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Стили для страницы "Добавить товар" */
+body {
+    background-color: #3498db; /* Задний фон цвета */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Чтобы форма была по центру на всю высоту экрана */
+    margin: 0; /* Убираем отступы по умолчанию */
+}
+
+.product-container {
+    background-color: #fff; /* Фон формы */
+    padding: 80px;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Тень для формы */
+    margin-top: auto;
+}
+
+
+label {
+    display: block; /* Делаем метки блочными элементами для выравнивания по левому краю */
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%; /* Расширяем поля ввода на всю доступную ширину */
+    padding: 5px;
+}
