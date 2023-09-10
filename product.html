@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <title>Adicionar produto</title>
+</head>
+<body>
+    <div class="product-container">
+        <h1>Produção</h1>
+
+
+        <form id="product-form" action="/add-product" method="post">
+            
+            <div class="form-group">
+                <label for="referencia">Ref:</label>
+                <input type="number" id="referencia" name="referencia" required placeholder="So numeros">
+            </div>
+
+
+            <div class="form-group">
+                <label for="lote-produto">Lote:</label>
+                <input type="number" id="lote-produto" name="lote-produto" required placeholder="So numeros">
+            </div>
+
+            <div class="form-group">
+                <label for="maquina">Maquina:</label>
+                <input type="number" id="maquina" name="maquina" required placeholder="So numeros">
+            </div>
+
+
+            <div class="form-group">
+                <label for="product-description">Tamanho de produto:</label>
+                <textarea id="product-description" name="product-description" required></textarea>
+            </div>
+
+
+            <div class="form-group">
+                <label for="product-quantity">Quantidade:</label>
+                <input type="number" id="product-quantity" name="product-quantity" required placeholder="So numeros">
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Adicionar</button>
+            </div>
+
+
+        </form>
+    </div>
+    <script src="/static/product-script.js"></script>
+    
+    <script>
+        function isNumeric(input) {
+               return /^[0-9]+$/.test(input);
+           }
+       document.getElementById("add-product-form").addEventListener("submit", function (event) {
+           const referenciaInput = document.getElementById("referencia", "lote-produto", "maquina", "product-quantity");
+           // Добавьте другие поля формы
+
+           if (!isNumeric(referenciaInput.value)) {
+               alert("Поля должны содержать только цифры");
+               event.preventDefault(); // Предотвращаемn отправку формы
+           }
+
+           // Проверка для других полей формы
+           // код для остальных полей
+       });
+   </script>
+
+<script>
+    const referenciaInput = document.getElementById("referencia");
+
+    referenciaInput.addEventListener("input", function () {
+        // Проверяем, введены ли какие-либо символы
+        if (referenciaInput.value.length > 0) {
+            // Если есть введенные символы, убираем placeholder
+            referenciaInput.removeAttribute("placeholder");
+        } else {
+            // Если поле пустое, восстанавливаем placeholder
+            referenciaInput.setAttribute("placeholder", "So numeros");
+        }
+    });
+</script>
+
+</body>
+</html>
